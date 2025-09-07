@@ -1,0 +1,27 @@
+<div class="oj-hybrid-padding">
+  <h1>History</h1>
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Stock ID</th>
+          <th>Transaction Type</th>
+          <th>Transaction Price</th>
+          <th>Volume</th>
+          <th>Transaction Date</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: stock">
+        <tr>
+          <td><span data-bind="text: stockId"></span></td>
+          <td><span data-bind="text: transactionType"></span></td>
+          <td><span data-bind="text: transactionPrice"></span></td>
+          <td><span data-bind="text: volume"></span></td>
+          <td><span data-bind="text: transactionTime"></span></td>
+         
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+</div>

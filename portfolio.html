@@ -1,0 +1,37 @@
+<div class="oj-hybrid-padding">
+  <h1>Portfolio</h1>
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Stock ID</th>
+          <th>Stock Name</th>
+          <th>Stock Volume</th>
+          <th>Net Invested</th>
+          <th>Current Stock Price</th>
+          <th>Current Value</th>
+          <th>Sell</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: stock">
+        <tr>
+          <td><span data-bind="text: stockId"></span></td>
+          <td><span data-bind="text: stockName"></span></td>
+          <td><span data-bind="text: currentVolume"></span></td>
+          <td><span data-bind="text: netInvested"></span></td>
+          <td><span data-bind="text: currentPrice"></span></td>
+          <td><span data-bind="text: currentValue"></span></td>
+          <td>
+            <button data-bind="click: $parent.sellStock">Sell</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-bind="visible: stock().length === 0" style="color: red; margin-top: 8px;">
+      No stocks found.
+    </div>
+    <div data-bind="visible: errorMessage" style="color: red; margin-top: 8px;">
+      <span data-bind="text: errorMessage"></span>
+    </div>
+  </div>
+</div>

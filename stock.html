@@ -1,0 +1,70 @@
+<div class="oj-hybrid-padding" style="max-width:700px;margin:auto;">
+  
+  <!-- Section Navigation Buttons -->
+  <div style="margin-bottom: 24px; display:flex; gap:12px;">
+    <button type="button" data-bind="click: function(){ currentSection('add') }">Add Stock</button>
+    <button type="button" data-bind="click: function(){ currentSection('list') }">List Stocks</button>
+    <button type="button" data-bind="click: function(){ currentSection('update') }">Update Stock</button>
+    <button type="button" data-bind="click: function(){ currentSection('delete') }">Delete Stock</button>
+  </div>
+  
+  <!-- Add Stock Form -->
+  <form data-bind="visible: currentSection() === 'add', submit: addStock" style="display: flex; flex-direction:column; gap:10px;">
+    <label>Enter StockID : <input required type="number" data-bind="value: sId"></label><br>
+    <label>Enter StockName : <input required type="text" data-bind="value: sName"></label><br>
+    <label>Enter Stock Price : <input required type="number" data-bind="value: price"></label><br>
+    <label>Enter Stock Volume : <input required type="number" data-bind="value: volume"></label><br>
+    <label>Enter Listed Price : <input required type="number" data-bind="value: lisPrice"></label><br>
+    <label>Enter Listed Exchange : <input required type="text" data-bind="value: exchange"></label><br>
+    <button type="submit">Add a Stock</button>
+  </form>
+  
+  <!-- List Stocks Table -->
+  <div data-bind="visible: currentSection() === 'list'">
+    <button data-bind="click: getStocks" style="margin-bottom:10px;">Fetch All Stocks</button>
+    <div style="overflow-x:auto;">
+      <table border="1" style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th>Stock ID</th>
+            <th>Stock Name</th>
+            <th>Stock Price</th>
+            <th>Stock Volume</th>
+            <th>Listing Price</th>
+            <th>Listed Date</th>
+            <th>Listing Exchange</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: stock">
+          <tr>
+            <td data-bind="text: stockId"></td>
+            <td data-bind="text: stockName"></td>
+            <td data-bind="text: stockPrice"></td>
+            <td data-bind="text: stockVolume"></td>
+            <td data-bind="text: listedPrice"></td>
+            <td data-bind="text: listedDate"></td>
+            <td data-bind="text: listedExchange"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Update Stock Form -->
+  <form data-bind="visible: currentSection() === 'update', submit: updateStock" style="display: flex; flex-direction:column; gap:10px;">
+    <label>Stock ID: <input type="text" data-bind="value: sId" required></label><br>
+    <label>Stock Name: <input type="text" data-bind="value: sName" required></label><br>
+    <label>Price: <input type="number" data-bind="value: price" required></label><br>
+    <label>Volume: <input type="number" data-bind="value: volume" required></label><br>
+    <label>Listed Price: <input type="number" data-bind="value: lisPrice" required></label><br>
+    <label>Listed Date: <input type="date" data-bind="value: listedDate" required></label><br>
+    <label>Exchange: <input type="text" data-bind="value: exchange" required></label><br>
+    <button type="submit">Update Stock</button>
+  </form>
+  
+  <!-- Delete Stock Form -->
+  <form data-bind="visible: currentSection() === 'delete', submit: deleteStock" style="display: flex; flex-direction:column; gap:10px;">
+    <label>Stock ID: <input type="text" data-bind="value: sId" required></label>
+    <button type="submit">Delete Stock</button>
+  </form>
+</div>

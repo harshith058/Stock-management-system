@@ -1,0 +1,37 @@
+<div class="oj-hybrid-padding">
+  <h3>All Customers Data</h3>
+  <div style="margin-bottom:18px;">
+    <button type="button" data-bind="click: showListSection">Display All Customers</button>
+    <button type="button" data-bind="click: showDeleteSection" style="margin-left:12px;">Delete Customer</button>
+  </div>
+  <!-- Table: only shows when currentSection() === 'list' -->
+  <div data-bind="visible: currentSection() === 'list'">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>customerId</th>
+          <th>firstName</th>
+          <th>lastName</th>
+          <th>phoneNumber</th>
+          <th>emailId</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: customers">
+        <tr>
+          <td><span data-bind="text: customerId"></span></td>
+          <td><span data-bind="text: firstName"></span></td>
+          <td><span data-bind="text: lastName"></span></td>
+          <td><span data-bind="text: phoneNumber"></span></td>
+          <td><span data-bind="text: emailId"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Delete Customer inputs: only shows when currentSection() === 'delete' -->
+  <div data-bind="visible: currentSection() === 'delete'">
+    <input type="number" placeholder="Enter Customer ID to delete"
+           data-bind="value: deleteCustomerId" style="width:180px;">
+    <button type="button" data-bind="click: deleteCustomer" style="margin-left:8px;">Confirm Delete</button>
+    <button type="button" data-bind="click: showListSection" style="margin-left:8px;">Cancel</button>
+  </div>
+</div>

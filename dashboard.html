@@ -1,0 +1,28 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Stock ID</th>
+            <th>Stock Name</th>
+            <th>Stock Price</th>
+            <th>Stock Volume</th>
+            <th>Listing Price</th>
+            <th>Listed Date</th>
+            <th>Listing Exchange</th>
+            <th>Buy</th> <!-- Add this -->
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: stock">
+        <tr>
+            <td><span data-bind="text: stockId"></span></td>
+            <td><span data-bind="text: stockName"></span></td>
+            <td><span data-bind="text: stockPrice"></span></td>
+            <td><span data-bind="text: stockVolume"></span></td>
+            <td><span data-bind="text: listedPrice"></span></td>
+            <td><span data-bind="text: listedDate"></span></td>
+            <td><span data-bind="text: listedExchange"></span></td>
+            <td>
+                <button data-bind="click: $parent.buyStock">Buy</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+<div class="oj-hybrid-padding" style="display: flex; justify-content: center; align-items: center; min-height: 80vh; background-color: #f7f7f7;">
+  <div style="background: #fff; padding: 32px 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07); width: 380px;">
+    <!-- Login Form -->
+    <div data-bind="visible: !showSignUp()">
+      <h1 style="text-align:center; margin-bottom: 24px; color:#2455a5;">Stocks Login</h1>
+      <form data-bind="submit: login" autocomplete="off" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label for="login-email">Email:</label>
+          <input id="login-email" type="email" data-bind="value: mail" required autofocus style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="login-password">Password:</label>
+          <input id="login-password" type="password" data-bind="value: pass" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="user-type">User Type:</label>
+          <select id="user-type" data-bind="value: userType" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+            <option value="admin">Admin</option>
+            <option value="customer">Customer</option>
+          </select>
+        </div>
+        <div data-bind="visible: errorMessage" style="color: red; margin-top: 4px;">
+          <span data-bind="text: errorMessage"></span>
+        </div>
+        <button type="submit" style="padding: 10px; border: none; border-radius: 6px; background: #2455a5; color: #fff; font-weight: bold; cursor: pointer;">Login</button>
+      </form>
+      <div style="margin-top: 18px; text-align: center;">
+        <span>Don't have an account?</span>
+        <button type="button"
+                style="background: none; border: none; color: #2455a5; font-weight: bold; cursor: pointer; text-decoration: underline; padding: 0;"
+                data-bind="click: showSignUpForm">
+          Sign Up
+        </button>
+      </div>
+    </div>
+    <!-- Sign Up Form -->
+    <div data-bind="visible: showSignUp">
+      <h1 style="text-align:center; margin-bottom: 24px; color:#2455a5;">Sign Up</h1>
+      <form data-bind="submit: signUp" autocomplete="off" style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label for="first-name">First Name:</label>
+          <input id="first-name" type="text" data-bind="value: firstName" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="last-name">Last Name:</label>
+          <input id="last-name" type="text" data-bind="value: lastName" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input id="phone" type="tel" data-bind="value: phoneNumber" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="signup-email">Email:</label>
+          <input id="signup-email" type="email" data-bind="value: signUpEmail" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div>
+          <label for="signup-password">Password:</label>
+          <input id="signup-password" type="password" data-bind="value: signUpPassword" required style="width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #ccc;">
+        </div>
+        <div data-bind="visible: errorMessage" style="color: red; margin-top: 4px;">
+          <span data-bind="text: errorMessage"></span>
+        </div>
+        <button type="submit" style="padding: 10px; border: none; border-radius: 6px; background: #2455a5; color: #fff; font-weight: bold; cursor: pointer;">Sign Up</button>
+      </form>
+      <div style="margin-top: 16px; text-align: center;">
+        <span>Have an account?</span>
+        <button type="button"
+                style="background: none; border: none; color: #2455a5; font-weight: bold; cursor: pointer; text-decoration: underline; padding: 0;"
+                data-bind="click: showLoginForm">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

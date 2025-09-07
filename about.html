@@ -1,0 +1,84 @@
+<!--
+ Copyright (c) 2014, 2025, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<style>
+  .about-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(30, 34, 90, 0.08);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+  }
+  .about-container h1 {
+    font-size: 2.2em;
+    color: #3367d6;
+    margin-bottom: 12px;
+  }
+  .about-container h2 {
+    font-size: 1.32em;
+    color: #607d8b;
+    border-bottom: 2px solid #e3e8f0;
+    padding-bottom: 6px;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .about-container ul {
+    margin-left: 22px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .about-container ul li {
+    margin-bottom: 7px;
+    line-height: 1.5;
+    list-style: disc inside;
+    padding-left: 0;
+  }
+  .about-container strong {
+    color: #092d43;
+  }
+  @media (max-width: 600px) {
+    .about-container {
+      padding: 14px;
+      border-radius: 6px;
+    }
+    .about-container h1 {
+      font-size: 1.4em;
+    }
+    .about-container h2 {
+      font-size: 1.08em;
+    }
+  }
+</style>
+
+<div class="about-container">
+  <h1 style="text-align: center;">STOCK MANAGEMENT SYSTEM</h1>
+  <p>
+    <strong>Stock Management System</strong> is a full-stack Java-based web application for managing stocks, customers and user portfolios. It’s designed for both administrators and end customers, with secure authentication and REST back-end APIs.
+  </p>
+  
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Authentication:</strong> Login and sign-up for users.</li>
+    <li><strong>Stocks Management:</strong> Add, update, delete, and list stocks</li>
+    <li><strong>Customer Management:</strong> Admin can add and remove customers.</li>
+    <li><strong>Buy/Sell Transactions:</strong> Customers can purchase or sell stocks, with changes reflected in their portfolios.</li>
+    <li><strong>User Portfolio:</strong> Real-time holdings, market value, and profit/loss summary per customer.</li>
+    <li><strong>Role-based Access:</strong> Distinct functionality for admins vs. end customers.</li>
+  </ol>
+
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Backend:</strong> Java, Spring Boot, Spring JDBC</li>
+    <li><strong>Database:</strong> Oracle 19c </li>
+    <li><strong>Frontend:</strong> OJET </li>
+    <li><strong>Build Tool:</strong> Maven</li>
+    <li><strong>REST APIs:</strong> For all features and reporting</li>
+    <li><strong>Security:</strong> Basic authentication, validation</li>
+  </ol>
+</div>
