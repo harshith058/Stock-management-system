@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class StockController {
 	@Autowired
 	StocksService ss;
-	@RequestMapping(value = "/stock", method = RequestMethod.POST)
+	
+	@RequestMapping(value="/stock",method = RequestMethod.POST)
 	public String addStock(@RequestBody Stocks s) {
 		ss.addStock(s);
 		return "Stock Added Successfully";
 	}
+	
+	
 	@RequestMapping(value = "/stock", method = RequestMethod.GET)
 	public ArrayList<Stocks> getStocks() {
 		System.out.println("Fetching all stocks...");

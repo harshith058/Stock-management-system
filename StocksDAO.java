@@ -30,9 +30,10 @@ public class StocksDAO extends JdbcDaoSupport {
     }
 
     public void addAStock(Stocks s) {
-        String sql = "INSERT INTO stock (STOCK_ID, STOCK_NAME, STOCK_PRICE, STOCK_VOLUME, LISTED_PRICE, LISTED_DATE, LISTED_EXCHANGE) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO stock (STOCK_ID, STOCK_NAME, STOCK_PRICE, STOCK_VOLUME, LISTED_PRICE, LISTED_DATE, LISTED_EXCHANGE) " +
+                     "VALUES (?, ?, ?, ?, ?, SYSDATE, ?)";
         giveJdbcTemplate().update(sql, s.getStockId(), s.getStockName(), s.getStockPrice(), s.getStockVolume(),
-                s.getListedPrice(), s.getListedDate(), s.getListedExchange());
+                s.getListedPrice(), s.getListedExchange());
     }
 
     public ArrayList<Stocks> getAllStocks() {
